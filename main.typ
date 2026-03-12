@@ -1,20 +1,9 @@
-#import "cover.typ": *
-#cover(
+#import "template.typ": template
+
+#show: template.with(
   title: "实验一 医学图像分类",
   course: "人工智能实验",
-  class: "计算231",
-  student-id: "2023308250117",
-  student-name: "龚浩然",
 )
-
-#set par(
-  first-line-indent: (
-    all: true,
-    amount: 2em,
-  ),
-)
-#set text(font: "Noto Serif SC")
-#show image: it => align(center, it)
 
 = 方法原理
 

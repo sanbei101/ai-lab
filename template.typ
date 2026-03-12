@@ -4,7 +4,7 @@
   #v(-0.5em)
   #line(length: 100%, stroke: 1pt)
 ]
-
+#import "@preview/cuti:0.4.0": show-cn-fakebold
 #let justify(s) = {
   set text(weight: "bold")
   if type(s) == content and s.has("text") { s = s.text }
@@ -60,12 +60,30 @@
     ]
   ]
 }
+#let template(
+  title: "实验题目",
+  course: "课程名称",
+  class: "计算231",
+  student-id: "2023308250117",
+  student-name: "龚浩然",
+  body,
+) = {
+  show: show-cn-fakebold
+  cover(
+    title: title,
+    course: course,
+    class: class,
+    student-id: student-id,
+    student-name: student-name,
+  )
+  set par(
+    first-line-indent: (
+      all: true,
+      amount: 2em,
+    ),
+  )
+  set text(font: ("Times New Roman", "SimSun"))
+  show image: it => align(center, it)
 
-
-// #cover(
-//   title: "论新时期中美两国正确相处之道：从竞争博弈到共生共荣",
-//   course: "形式与政策",
-//   class: "计算231",
-//   student-id: "202330825011",
-//   student-name: "龚浩然",
-// )
+  body
+}
